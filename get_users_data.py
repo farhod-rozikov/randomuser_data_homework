@@ -1,3 +1,4 @@
+from unicodedata import name
 import get_data
 
 def get_users_data(data:dict) -> list:
@@ -12,3 +13,8 @@ def get_users_data(data:dict) -> list:
     Returns:
         list: users data list
     """
+    i = 0
+    users_data = [{"first_name": u_d['name']['first'], "last_name": u_d['name']['last'], "phone_number": u_d['phone']}  for u_d in data]
+    return users_data
+data = get_data.get_data('randomuser_data.json')
+print(get_users_data(data))
