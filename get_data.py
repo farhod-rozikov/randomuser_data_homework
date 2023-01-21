@@ -11,4 +11,4 @@ def get_data(filename:str) -> dict:
     """
     f = open(filename).read()
     data = json.loads(f)
-    return data['results'][0]
+    return data['results']
